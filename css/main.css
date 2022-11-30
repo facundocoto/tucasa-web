@@ -20,8 +20,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway";
-  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
   color: #171717;
 }
 
@@ -148,7 +148,6 @@ hr {
   .responsive-image {
     background-image: url("../img/cover5.jpg");
     min-height: 450px;
-    font-family: "Raleway";
     font-size: 6rem;
     font-weight: 300;
     line-height: 1.1;
@@ -160,7 +159,6 @@ hr {
   .responsive-image {
     background-image: url("../img/cover3.jpg");
     min-height: 450px;
-    font-family: "Raleway";
     font-size: 6rem;
     font-weight: 300;
     line-height: 1.1;
@@ -172,7 +170,6 @@ hr {
   .responsive-image {
     background-image: url("../img/coverCelular.jpg");
     height: 250px;
-    font-family: "Raleway";
     font-size: 2.5rem;
     font-weight: 250;
     line-height: 1.1;
@@ -184,7 +181,6 @@ hr {
   .responsive-image {
     background-image: url("../img/coverCelular.jpg");
     height: 250px;
-    font-family: "Raleway";
     font-size: 2.5rem;
     font-weight: 250;
     line-height: 1.1;
@@ -196,7 +192,6 @@ hr {
   .responsive-image {
     background-image: url("../img/coverCelular.jpg");
     height: 250px;
-    font-family: "Raleway";
     font-size: 2.5rem;
     font-weight: 250;
     line-height: 1.1;
@@ -310,6 +305,7 @@ header.masthead {
 
 .copyright {
   text-align: center;
+  font-size: 8px;
   background-color: #3065c3;
 }
 
@@ -350,10 +346,8 @@ header.masthead {
 
 .service-image:hover {
   transform-origin: 20% 80%;
-  transition: transform 0.3s linear;
-  transform: scale(
-    1.5
-  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transition: transform 0.2s linear;
+  transform: scale(1.1);
 }
 
 .comodities {
