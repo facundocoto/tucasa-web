@@ -1,258 +1,310 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="img/hotel3.png" />
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link href="css/one-page-wonder.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/map.js"></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeHCMM0WPDXb6-4xEnZKzB0ASzfkSgVAA&callback=initMap"
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      type="text/css"
     />
-    <script src="https://www.google.com/recaptcha/api.js"></script>
     <meta
       name="description"
       content="Tu Casa - Hospedaje en Gualeguay, Entre Rios"
     />
     <meta name="author" content="Facundo Coto" />
     <title>Tu Casa Hospedaje</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              lato: ["Lato", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .fullscreen img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
+    </style>
   </head>
 
-  <body data-spy="scroll" data-offset="0" data-target="#navigation">
-    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target=".navbar-collapse"
+  <body class="font-lato text-gray-800">
+    <header class="bg-[#3065c3] shadow-md fixed w-full z-10">
+      <nav
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <a href="#" class="flex items-center">
+          <img src="img/tucasalogo.png" alt="Tu Casa Hospedaje" class="h-12" />
+        </a>
+        <div class="hidden md:flex space-x-4">
+          <a href="#home" class="text-white hover:text-gray-200">Inicio</a>
+          <a href="#info" class="text-white hover:text-gray-200"
+            >Habitaciones & Tarifas</a
           >
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" rel="home" href="#" title="Tu Casa Hospedaje">
-            <img class="logo-navbar" src="img/tucasalogo.png" />
-          </a>
+          <a href="#contact" class="text-white hover:text-gray-200">Contacto</a>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active">
-              <a href="#home" class="smothscroll">Inicio</a>
-            </li>
-            <li>
-              <a href="#info" class="smothScroll">Habitaciones & Tarifas</a>
-            </li>
-            <li><a href="#contact" class="smothScroll">Contacto</a></li>
-          </ul>
-        </div>
+        <button class="md:hidden" id="menu-toggle">
+          <i class="fas fa-bars text-2xl text-white"></i>
+        </button>
+      </nav>
+      <div class="hidden md:hidden bg-[#3065c3] text-white" id="mobile-menu">
+        <a href="#home" class="block py-2 px-4 text-sm hover:bg-blue-700"
+          >Inicio</a
+        >
+        <a href="#info" class="block py-2 px-4 text-sm hover:bg-blue-700"
+          >Habitaciones & Tarifas</a
+        >
+        <a href="#contact" class="block py-2 px-4 text-sm hover:bg-blue-700"
+          >Contacto</a
+        >
       </div>
-    </div>
+    </header>
 
-    <section id="home" name="home" class="responsive-image">
-      <div class="container text-center">
-        <div class="col-md-12 whiteable">
-          <br />
-          <br />
-          <center>
-            <span class="title">Bienvenidos a Hospedaje Tu Casa </span>
-          </center>
+    <main>
+      <section
+        id="home"
+        class="bg-cover bg-center h-screen flex items-center"
+        style="background-image: url('img/cover2.jpg')"
+      >
+        <div class="container mx-auto text-center text-white">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4">
+            Bienvenidos a Hospedaje Tu Casa
+          </h1>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="desc" name="desc" />
-    <div class="container">
-      <div class="col-md-12">
-        <h2 class="display-4 text-black centerable">
-          Ubicado a 4 cuadras del centro de la ciudad de Gualeguay, garantizando
-          comodidad e higiene, ofrece sencillas habitaciones al mejor precio.
-          <br /><br />Pensado para quienes buscan solo pasar la noche, descansar
-          lo necesario y disfrutar de la ciudad; o para parejas que buscan pasar
-          un momento íntimo.
-        </h2>
-      </div>
-    </div>
-
-    <section id="info" name="info">
-      <div class="container">
-        <div class="col-lg-12">
-          <h1><center>Tarifas</center></h1>
-          <div class="container">
-            <div class="col-md-12">
-              <h2 class="display-4 text-black centerable">
-                <a
-                  class="contact"
-                  href="#contact"
-                  >¡Consulte</a
-                >
-                por descuentos especiales!
-              </h2>
-            </div>
-          </div>
+      <section id="desc" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+          <p class="text-xl md:text-2xl text-center max-w-4xl mx-auto">
+            Ubicado a 4 cuadras del centro de la ciudad de Gualeguay,
+            garantizando comodidad e higiene, ofrece sencillas habitaciones al
+            mejor precio.
+            <br /><br />
+            Pensado para quienes buscan solo pasar la noche, descansar lo
+            necesario y disfrutar de la ciudad; o para parejas que buscan pasar
+            un momento íntimo.
+          </p>
         </div>
-        <div class="col-lg-12">
-          A tener en cuenta: El hospedaje cuenta con dos sectores: uno interno,
-          para uso tipo albergue transitorio (alquiler por hora) y otro externo,
-          para pernoctar (alquiler por día). La descripción, precios y fotos de
-          las habitaciones corresponden al sector externo. Horarios de entrada:
-          13:00 a 00:00hs y salida: 00:00 a 12:00hs.
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="comodities">
-            <h4 class="displayado"><i class="fa fa-bed"></i> Camas Dobles</h4>
-            <h4><i class="fa fa-wifi"></i> WiFi</h4>
-            <h4><i class="fa fa-tv"></i> TV</h4>
-            <h4><i class="fa fa-car"></i> Estacionamiento</h4>
-          </div>
+      </section>
 
-          <div class="service-image-container">
-            <img class="service-image" src="img/Servicios/1.jpg" />
-            <img class="service-image" src="img/Servicios/2.jpg" />
-            <img class="service-image" src="img/Servicios/3.jpg" />
-            <img class="service-image" src="img/Servicios/4.jpg" />
-            <img class="service-image" src="img/Servicios/5.jpg" />
-          </div>
-
-          <div class="comodities">
-            <h4><i class="fa fa-toilet"></i> Baño privado</h4>
-            <h4><i class="fa fa-thermometer-full"></i> Calefacción</h4>
-            <h4><i class="fa fa-thermometer"></i> Aire acondicionado</h4>
-            <h4><i class="fa fa-user-plus"></i> Atención las 24 hs</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" name="contact">
-      <div id="footerwrap">
-        <div class="container">
-          <div class="col-md-offset-2 col-md-4">
-            <h3>Contáctenos</h3>
-            <div class="contact-container">
-              <div class="contact-container-item">
-                <b>Teléfono</b>
-                <span class="flex"
-                  >03444 15-44-0551
-                  <img
-                    src="https://lh6.ggpht.com/mp86vbELnqLi2FzvhiKdPX31_oiTRLNyeK8x4IIrbF5eD1D5RdnVwjQP0hwMNR_JdA=w300"
-                    width="22px"
-                    height="22px"
-                  />
-                </span>
-              </div>
-
-              <div class="contact-container-item">
-                <b>Email</b> tucasahospedaje@gmail.com
-              </div>
-              <div class="contact-container-item">
-                <b>Dirección</b>Juan Bautista Alberdi 221, 2840 Gualeguay, Entre
-                Ríos, Argentina.
-              </div>
-              <div class="contact-container-item">
-                <h2>
-                  <a
-                    href="https://www.google.com.ar/maps/dir//Tu+Casa+hospedaje+%7C+Hotel+%26+Hoteles+en+Gualeguay,+Juan+Bautista+Alberdi+221,+2840+Gualeguay,+Entre+R%C3%ADos/@-33.1415179,-59.3114027,14.25z/data=!4m15!1m6!3m5!1s0x0:0xdb355d6689856f0d!2sTu+Casa+hospedaje+%7C+Hotel+%26+Hoteles+en+Gualeguay!8m2!3d-33.1430308!4d-59.3174994!4m7!1m0!1m5!1m1!1s0x95b09b63c2b7a893:0xdb355d6689856f0d!2m2!1d-59.3174994!2d-33.1430308"
-                    class="btn btn-large btn-success"
-                  >
-                    Cómo llegar
-                  </a>
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <h3>O déjenos un mensaje</h3>
-            <br />
-            <form
-              role="form"
-              action="register.php"
-              method="post"
-              onSubmit="alert('Gracias por comunicarte, pronto nos contactermos.');"
-              enctype="plain"
+      <section id="info" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
+            Tarifas y Servicios
+          </h2>
+          <p class="text-xl text-center mb-8">
+            <a href="#contact" class="text-blue-600 hover:underline"
+              >¡Consulte</a
             >
-              <div class="form-group">
-                <label for="name1">Nombre</label>
-                <input
-                  type="name"
-                  name="nombre"
-                  class="form-control"
-                  id="nombre"
-                  placeholder="Su nombre aquí"
-                />
+            por descuentos especiales!
+          </p>
+          <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h3 class="text-2xl font-semibold mb-4">Información Importante</h3>
+            <p class="text-lg">El hospedaje cuenta con dos sectores:</p>
+            <ul class="list-disc list-inside mb-4">
+              <li>
+                Sector interno: para uso tipo albergue transitorio (alquiler por
+                hora)
+              </li>
+              <li>Sector externo: para pernoctar (alquiler por día)</li>
+            </ul>
+            <p class="text-lg">
+              La descripción, precios y fotos de las habitaciones corresponden
+              al sector externo.
+            </p>
+            <p class="text-lg font-semibold mt-4">
+              Horarios: Entrada de 13:00 a 00:00hs | Salida de 00:00 a 12:00hs
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-6">
+              <h3 class="text-2xl font-semibold mb-4">Nuestros Servicios</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-center bg-white rounded-lg shadow p-4">
+                  <i class="fas fa-bed text-2xl text-blue-600 mr-3"></i>
+                  <span>Camas Dobles</span>
+                </div>
+                <div class="flex items-center bg-white rounded-lg shadow p-4">
+                  <i class="fas fa-wifi text-2xl text-blue-600 mr-3"></i>
+                  <span>WiFi Gratis</span>
+                </div>
+                <div class="flex items-center bg-white rounded-lg shadow p-4">
+                  <i class="fas fa-tv text-2xl text-blue-600 mr-3"></i>
+                  <span>TV Cable</span>
+                </div>
+                <div class="flex items-center bg-white rounded-lg shadow p-4">
+                  <i class="fas fa-car text-2xl text-blue-600 mr-3"></i>
+                  <span>Estacionamiento</span>
+                </div>
+                <div class="flex items-center bg-white rounded-lg shadow p-4">
+                  <i class="fas fa-toilet text-2xl text-blue-600 mr-3"></i>
+                  <span>Baño privado</span>
+                </div>
+                <div class="flex items-center bg-white rounded-lg shadow p-4">
+                  <i
+                    class="fas fa-thermometer-full text-2xl text-blue-600 mr-3"
+                  ></i>
+                  <span>Calefacción</span>
+                </div>
+                <div class="flex items-center bg-white rounded-lg shadow p-4">
+                  <i
+                    class="fas fa-thermometer-half text-2xl text-blue-600 mr-3"
+                  ></i>
+                  <span>Aire acondicionado</span>
+                </div>
+                <div class="flex items-center bg-white rounded-lg shadow p-4">
+                  <i class="fas fa-user-clock text-2xl text-blue-600 mr-3"></i>
+                  <span>Atención 24hs</span>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="email1">Email</label>
-                <input
-                  type="email"
-                  name="correo"
-                  class="form-control"
-                  id="correo"
-                  placeholder="Su dirección de email"
-                />
-              </div>
-              <div class="form-group">
-                <label for="email1">Teléfono</label>
-                <input
-                  type="text"
-                  name="telefono"
-                  class="form-control"
-                  id="telefono"
-                  placeholder="Su telefono de contacto"
-                />
-              </div>
-              <div class="form-group">
-                <label>Mensaje</label>
-                <textarea
-                  class="form-control"
-                  id="mensaje"
-                  name="mensaje"
-                  rows="3"
-                ></textarea>
-                *todos los campos son obligatorios
-              </div>
+            </div>
+            <div class="space-y-6">
+              <h3 class="text-2xl font-semibold mb-4">Galería de Imágenes</h3>
               <div
-                class="g-recaptcha"
-                data-sitekey="6LeEtbQUAAAAACJcM9iWQ8GqMFJoPHlobAph0zkk"
-                data-callback="enableBtn"
-              ></div>
-              <br />
-              <button
-                id="sendButton"
-                type="submit"
-                class="btn btn-large btn-success"
+                class="grid grid-cols-1 md:grid-cols-2 gap-4"
+                id="image-gallery"
               >
-                Enviar
-              </button>
-            </form>
+                <img
+                  src="img/Servicios/1.jpg"
+                  alt="Servicio 1"
+                  class="w-full h-40 object-cover rounded-lg shadow-lg cursor-pointer"
+                />
+                <img
+                  src="img/Servicios/2.jpg"
+                  alt="Servicio 2"
+                  class="w-full h-40 object-cover rounded-lg shadow-lg cursor-pointer"
+                />
+                <img
+                  src="img/Servicios/3.jpg"
+                  alt="Servicio 3"
+                  class="w-full h-40 object-cover rounded-lg shadow-lg cursor-pointer"
+                />
+                <img
+                  src="img/Servicios/4.jpg"
+                  alt="Servicio 4"
+                  class="w-full h-40 object-cover rounded-lg shadow-lg cursor-pointer"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div id="map" class="containermap"></div>
-    <footer id="footer" class="copyright">
-      <a href="http://www.facundocoto.com">&#169; Facundo Coto</a>
+      <section id="contact" class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
+            Contáctenos
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <i class="fas fa-phone mr-2"></i>
+                <span>03444 15-44-0551</span>
+                <img
+                  src="https://lh6.ggpht.com/mp86vbELnqLi2FzvhiKdPX31_oiTRLNyeK8x4IIrbF5eD1D5RdnVwjQP0hwMNR_JdA=w300"
+                  alt="WhatsApp"
+                  class="w-6 h-6 ml-2"
+                />
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-envelope mr-2"></i>
+                <span>tucasahospedaje@gmail.com</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span
+                  >Juan Bautista Alberdi 221, 2840 Gualeguay, Entre Ríos,
+                  Argentina.</span
+                >
+              </div>
+            </div>
+            <div class="flex justify-center items-center">
+              <a
+                href="https://www.google.com.ar/maps/dir//Tu+Casa+hospedaje+%7C+Hotel+%26+Hoteles+en+Gualeguay,+Juan+Bautista+Alberdi+221,+2840+Gualeguay,+Entre+R%C3%ADos/@-33.1415179,-59.3114027,14.25z/data=!4m15!1m6!3m5!1s0x0:0xdb355d6689856f0d!2sTu+Casa+hospedaje+%7C+Hotel+%26+Hoteles+en+Gualeguay!8m2!3d-33.1430308!4d-59.3174994!4m7!1m0!1m5!1m1!1s0x95b09b63c2b7a893:0xdb355d6689856f0d!2m2!1d-59.3174994!2d-33.1430308"
+                class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fas fa-map-marker-alt mr-2"></i> Cómo llegar
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-2">
+      <div class="container mx-auto px-4 text-right">
+        <a href="http://www.facundocoto.com" class="hover:underline"
+          >&#169; Facundo Coto</a
+        >
+      </div>
     </footer>
-    <script src="js/formButton.js" />
+
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+
+      // Image Gallery Fullscreen Functionality
+      const gallery = document.getElementById("image-gallery");
+      let fullscreenImage = null;
+
+      gallery.addEventListener("click", function (e) {
+        if (e.target.tagName === "IMG") {
+          openFullscreen(e.target.src);
+        }
+      });
+
+      function openFullscreen(src) {
+        fullscreenImage = document.createElement("div");
+        fullscreenImage.className = "fullscreen";
+        fullscreenImage.innerHTML = `<img src="${src}" alt="Fullscreen Image">`;
+        document.body.appendChild(fullscreenImage);
+        document.body.style.overflow = "hidden";
+
+        fullscreenImage.addEventListener("click", closeFullscreen);
+      }
+
+      function closeFullscreen() {
+        if (fullscreenImage) {
+          document.body.removeChild(fullscreenImage);
+          document.body.style.overflow = "";
+          fullscreenImage = null;
+        }
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && fullscreenImage) {
+          closeFullscreen();
+        }
+      });
+    </script>
   </body>
 </html>
