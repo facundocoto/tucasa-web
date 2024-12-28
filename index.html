@@ -12,20 +12,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link href="css/one-page-wonder.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/map.js"></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeHCMM0WPDXb6-4xEnZKzB0ASzfkSgVAA&callback=initMap"
-    />
-    <script src="https://www.google.com/recaptcha/api.js"></script>
     <meta
       name="description"
       content="Tu Casa - Hospedaje en Gualeguay, Entre Rios"
@@ -173,83 +162,18 @@
                   <a
                     href="https://www.google.com.ar/maps/dir//Tu+Casa+hospedaje+%7C+Hotel+%26+Hoteles+en+Gualeguay,+Juan+Bautista+Alberdi+221,+2840+Gualeguay,+Entre+R%C3%ADos/@-33.1415179,-59.3114027,14.25z/data=!4m15!1m6!3m5!1s0x0:0xdb355d6689856f0d!2sTu+Casa+hospedaje+%7C+Hotel+%26+Hoteles+en+Gualeguay!8m2!3d-33.1430308!4d-59.3174994!4m7!1m0!1m5!1m1!1s0x95b09b63c2b7a893:0xdb355d6689856f0d!2m2!1d-59.3174994!2d-33.1430308"
                     class="btn btn-large btn-success"
+                    target="_blank"
                   >
-                    Cómo llegar
+                  📍 Cómo llegar 
                   </a>
                 </h2>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <h3>O déjenos un mensaje</h3>
-            <br />
-            <form
-              role="form"
-              action="register.php"
-              method="post"
-              onSubmit="alert('Gracias por comunicarte, pronto nos contactermos.');"
-              enctype="plain"
-            >
-              <div class="form-group">
-                <label for="name1">Nombre</label>
-                <input
-                  type="name"
-                  name="nombre"
-                  class="form-control"
-                  id="nombre"
-                  placeholder="Su nombre aquí"
-                />
-              </div>
-              <div class="form-group">
-                <label for="email1">Email</label>
-                <input
-                  type="email"
-                  name="correo"
-                  class="form-control"
-                  id="correo"
-                  placeholder="Su dirección de email"
-                />
-              </div>
-              <div class="form-group">
-                <label for="email1">Teléfono</label>
-                <input
-                  type="text"
-                  name="telefono"
-                  class="form-control"
-                  id="telefono"
-                  placeholder="Su telefono de contacto"
-                />
-              </div>
-              <div class="form-group">
-                <label>Mensaje</label>
-                <textarea
-                  class="form-control"
-                  id="mensaje"
-                  name="mensaje"
-                  rows="3"
-                ></textarea>
-                *todos los campos son obligatorios
-              </div>
-              <div
-                class="g-recaptcha"
-                data-sitekey="6LeEtbQUAAAAACJcM9iWQ8GqMFJoPHlobAph0zkk"
-                data-callback="enableBtn"
-              ></div>
-              <br />
-              <button
-                id="sendButton"
-                type="submit"
-                class="btn btn-large btn-success"
-              >
-                Enviar
-              </button>
-            </form>
-          </div>
         </div>
       </div>
     </section>
 
-    <div id="map" class="containermap"></div>
     <footer id="footer" class="copyright">
       <a href="http://www.facundocoto.com">&#169; Facundo Coto</a>
     </footer>
